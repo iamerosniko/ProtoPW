@@ -1,0 +1,194 @@
+<div class="wrapper">
+    <div class="sidebar-wrapper">
+        <div id="accordion">
+            <div class="panel list-group">
+                <a href="#" class="list-group-item brand">
+                    <span class="logo-mini"><img src="ProjectWorkplace/Resources/Images/Manulife_Logo_Small.png"></span>
+                    <span class="logo-lg"><img src="ProjectWorkplace/Resources/Images/Manulife_Logo.png"></span>
+                </a>
+                <!--DIS Overview-->
+                <!--This button displays when in large screen mode-->
+                <a (click)="routeWOUserName('mission-vision'); activeLink=1;" class="list-group-item accordion-toggle logo-lg" data-toggle="collapse" data-target="#disoverwiew" data-parent="#accordion">
+                    <span class="logo-lg"><i class="fa fa-university"></i> DIS Overview</span>
+                </a>
+                <div id="disoverwiew" class="sublinks collapse">
+                    <a routerLink="/mission-vision" class="list-group-item small" (click)="activeLink=1" [ngClass]="{'active' : activeLink==1}"><i ></i> DIS Mission - Vision</a>
+                    <a routerLink="/organization" class="list-group-item small" (click)="activeLink=2" [ngClass]="{'active' : activeLink==2}"><i ></i> Organizational Chart</a>
+                    <a routerLink="/strategies" class="list-group-item small" (click)="activeLink=3" [ngClass]="{'active' : activeLink==3}"><i ></i> Strategies</a>
+                    <a routerLink="/Functional-Tower" class="list-group-item small" (click)="activeLink=4" [ngClass]="{'active' : activeLink==4}"><i ></i> Functional Towers</a>
+                    <a (click)="routeWithID('Programs','Aspire'); activeLink=5;" class="list-group-item small accordion-toggle" data-toggle="collapse" data-target="#programs_lg"><i ></i> Programs</a>
+                    <div id="programs_lg" class="sublinks collapse">
+                        <a (click)="routeWithID('Programs','Aspire');" (click)="activeLink=5" class="list-group-item small" [ngClass]="{'active' : activeLink==5}"><i ></i> Aspire</a>
+                        <a (click)="routeWithID('Programs','Cares');" (click)="activeLink=6" class="list-group-item small"  [ngClass]="{'active' : activeLink==6}"><i ></i> Cares</a>
+                        <a (click)="routeWithID('Programs','Careers');" (click)="activeLink=7" class="list-group-item small" [ngClass]="{'active' : activeLink==7}"><i ></i> Careers</a>
+                        <a (click)="routeWithID('Programs','Digerati');" (click)="activeLink=8" class="list-group-item small"[ngClass]="{'active' : activeLink==8}"><i ></i> Digerati</a>
+                        <a (click)="routeWithID('Programs','Motivate');" (click)="activeLink=9" class="list-group-item small"[ngClass]="{'active' : activeLink==9}"><i ></i> Motivate</a>
+                    </div>
+                </div>
+                <!--This button displays when in small screen mode-->
+                <div class="dropdown">
+                    <a (click)="routeWOUserName('mission-vision'); activeLink=1;" class="list-group-item logo-mini">
+                        <i  class="fa fa-university fa-lg"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-header">DIS Overview</li>
+                        <li><a routerLink="/mission-vision" (click)="activeLink=1" [ngClass]="{'active' : activeLink==1}"><i ></i> DIS Mission - Vision</a></li>
+                        <li><a routerLink="/organization" (click)="activeLink=2" [ngClass]="{'active' : activeLink==2}"><i ></i> Organizational Chart</a></li>
+                        <li><a routerLink="/strategies" (click)="activeLink=3" [ngClass]="{'active' : activeLink==3}"><i ></i> Strategies</a></li>
+                        <li><a routerLink="/Functional-Tower" (click)="activeLink=4" [ngClass]="{'active' : activeLink==4}"><i ></i>Functional Towers</a></li>
+                        <li class="dropdown">
+                            <a (click)="routeWithID('Programs','Aspire'); activeLink=5;"><i ></i> Programs<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:2px;"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a (click)="routeWithID('Programs','Aspire'); activeLink=5;" [ngClass]="{'active' : activeLink==5}"><i ></i> Aspire</a></li>
+                                <li><a (click)="routeWithID('Programs','Cares'); activeLink=6;" [ngClass]="{'active' : activeLink==6}"><i ></i> Cares</a></li>
+                                <li><a (click)="routeWithID('Programs','Careers'); activeLink=7;" [ngClass]="{'active' : activeLink==7}"><i ></i> Careers</a></li>
+                                <li><a (click)="routeWithID('Programs','Digerati'); activeLink=8;" [ngClass]="{'active' : activeLink==8}"><i ></i> Digerati</a></li>
+                                <li><a (click)="routeWithID('Programs','Motivate'); activeLink=9;" [ngClass]="{'active' : activeLink==9}"><i ></i> Motivate</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!--DIS Overview-->
+                <!--Team Overview-->
+                <!--This button displays when in large screen mode-->
+                <a (click)="routeWOUserName('Team-Org'); activeLink=10;" class="list-group-item accordion-toggle logo-lg" data-toggle="collapse" data-target="#teamoverwiew" data-parent="#accordion">
+                    <span class="logo-lg"><i class="fa fa-users"></i> Team Overview</span>
+                </a>
+                <div id="teamoverwiew" class="sublinks collapse">
+                    <a routerLink="/Team-Org" class="list-group-item small" (click)="activeLink=10" [ngClass]="{'active' : activeLink==10}"><i ></i> Team Org Chart</a>
+                    <a (click)="routeWOUserName('Team-Services'); activeLink=11;"  class="list-group-item small accordion-toggle" data-toggle="collapse" data-target="#jobmgtprog_lg"><i ></i> Team Information</a>
+                    <div id="jobmgtprog_lg" class="sublinks collapse">
+                        <!--<a routerLink="/Team-JobDesc" class="list-group-item small"><i ></i> Job Management Program</a>-->
+                        <a routerLink="/Team-Services" (click)="activeLink=11" class="list-group-item small" [ngClass]="{'active' : activeLink==11}"><i ></i> Services</a>
+                        <a routerLink="/Team-Apps" (click)="activeLink=12" class="list-group-item small" [ngClass]="{'active' : activeLink==12}"><i ></i> Tools and Applications</a>
+                    </div>
+                </div>
+                <!--This button displays when in small screen mode-->
+                <div class="dropdown">
+                    <a (click)="routeWOUserName('Team-Org'); activeLink=10;" class="list-group-item logo-mini">
+                        <i class="fa fa-users fa-lg"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li (click)="routeWOUserName('Team-Org'); activeLink=10;" class="dropdown-header">Team Overview</li>
+                        <li><a routerLink="/Team-Org" (click)="activeLink=10" [ngClass]="{'active' : activeLink==10}"><i ></i> Team Org Chart</a></li>
+                        <li class="dropdown">
+                            <a (click)="routeWOUserName('Team-Services'); activeLink=11;"><i ></i> Team Information<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:2px;"></span></a>
+                            <ul class="dropdown-menu">
+                                <!--<li><a routerLink="/Team-JobDesc"><i ></i> Job Management Program</a></li>-->
+                                <li><a routerLink="/Team-Services" (click)="activeLink=11" [ngClass]="{'active' : activeLink==11}"><i ></i> Services</a></li>
+                                <li><a routerLink="/Team-Apps" (click)="activeLink=12" [ngClass]="{'active' : activeLink==12}"><i ></i> Tools and Applications</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!--Team Overview-->
+                <!--Leaders Video-->
+                <!--This button displays when in large screen mode-->
+                <a (click)="routeWOUserName('FH'); activeLink=13;" class="list-group-item accordion-toggle logo-lg" data-toggle="collapse" data-target="#leadvideo" data-parent="#accordion">
+                    <i class="fa fa-film"></i> Leaders' Video
+                </a>
+                <div id="leadvideo" class="sublinks collapse">
+                    <a routerLink="/FH" (click)="activeLink=13" class="list-group-item small" [ngClass]="{'active' : activeLink==13}"><i ></i> Function Head Video</a>
+                    <a routerLink="/Manager" (click)="activeLink=14" class="list-group-item small" [ngClass]="{'active' : activeLink==14}"><i ></i> Manager Video</a>
+                    <a routerLink="/Team-Leader" (click)="activeLink=15" class="list-group-item small" [ngClass]="{'active' : activeLink==15}"><i ></i> TL Video</a>
+                </div>
+                <!--This button displays when in small screen mode-->
+                <div class="dropdown">
+                    <a (click)="routeWOUserName('FH'); activeLink=13;" class="list-group-item logo-mini">
+                        <i class="fa fa-film fa-lg"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-header">Leaders' Video</li>
+                        <li><a routerLink="/FH" (click)="activeLink=13"  [ngClass]="{'active' : activeLink==13}"><i ></i> Function Head Video</a></li>
+                        <li><a routerLink="/Manager" (click)="activeLink=14"  [ngClass]="{'active' : activeLink==14}"><i ></i> Manager Video</a></li>
+                        <li><a routerLink="/Team-Leader" (click)="activeLink=15"  [ngClass]="{'active' : activeLink==15}"><i ></i> TL Video</a></li>
+                    </ul>
+                </div>
+                <!--Leaders Video-->
+                <!--DIS Tools-->
+                <!--This button displays when in large screen mode-->
+                <a (click)="routeWOUserName('opt'); activeLink=16;" class="list-group-item accordion-toggle logo-lg" data-toggle="collapse" data-target="#distools" data-parent="#accordion">
+                    <i class="fa fa-wrench"></i> DIS Tools
+                </a>
+                <div id="distools" class="sublinks collapse">
+                    <a routerLink="/opt" (click)="activeLink=16" class="list-group-item small" [ngClass]="{'active' : activeLink==16}"><i ></i> OPT</a>
+                    <a routerLink="/workday" (click)="activeLink=17" class="list-group-item small" [ngClass]="{'active' : activeLink==17}"><i ></i> WorkDay</a>
+                    <a routerLink="/khronos" (click)="activeLink=18" class="list-group-item small" [ngClass]="{'active' : activeLink==18}"><i ></i> Khronos</a>
+                    <a routerLink="/contacts" (click)="activeLink=19" class="list-group-item small" [ngClass]="{'active' : activeLink==19}"><i ></i> Contact Numbers</a>
+                </div>
+                <!--This button displays when in small screen mode-->
+                <div class="dropdown">
+                    <a (click)="routeWOUserName('opt'); activeLink=16;" class="list-group-item logo-mini">
+                        <i class="fa fa-wrench fa-lg"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li (click)="routeWOUserName('opt'); activeLink=16;" class="dropdown-header">DIS Tools</li>
+                        <li><a routerLink="/opt" (click)="activeLink=16" [ngClass]="{'active' : activeLink==16}"><i ></i> OPT</a></li>
+                        <li><a routerLink="/workday" (click)="activeLink=17" [ngClass]="{'active' : activeLink==17}"><i ></i> WorkDay</a></li>
+                        <li><a routerLink="/khronos" (click)="activeLink=18" [ngClass]="{'active' : activeLink==18}"><i ></i> Khronos</a></li>
+                        <li><a routerLink="/contacts" (click)="activeLink=19" [ngClass]="{'active' : activeLink==19}"><i ></i> Contact Numbers</a></li>
+                    </ul>
+                </div>
+                <!--DIS Tools-->
+                <!--Policies-->
+                <!--This button displays when in large screen mode-->
+                <a (click)="routeWOUserName('work-rule'); activeLink=20;" class="list-group-item accordion-toggle logo-lg" data-toggle="collapse" data-target="#policies" data-parent="#accordion">
+                    <i class="fa fa-book"></i> Policies
+                </a>
+                <div id="policies" class="sublinks collapse">
+                    <a routerLink="/privacy-policy" (click)="activeLink=20" class="list-group-item small" [ngClass]="{'active' : activeLink==20}"><i ></i> Privacy Policy</a>
+                    <a routerLink="/information-security" (click)="activeLink=21" class="list-group-item small" [ngClass]="{'active' : activeLink==21}"><i ></i> Information Security</a>
+                    <a routerLink="/work-rule" (click)="activeLink=22" class="list-group-item small" [ngClass]="{'active' : activeLink==22}"><i ></i> House Rules</a>
+                    <a routerLink="/vacation-leave" (click)="activeLink=23" class="list-group-item small" [ngClass]="{'active' : activeLink==23}"><i ></i> Vacation Leave</a>
+                    <a routerLink="/bereavement-policy" (click)="activeLink=24" class="list-group-item small" [ngClass]="{'active' : activeLink==24}"><i ></i> Bereavement Policy</a>
+                </div>
+                <!--This button displays when in small screen mode-->
+                <div class="dropdown">
+                    <a click="routeWOUserName('work-rule'); activeLink=20;" class="list-group-item logo-mini">
+                        <i class="fa fa-book fa-lg"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li (click)="routeWOUserName('work-rule'); activeLink=20;" class="dropdown-header">Policies</li>
+                        <li><a routerLink="/privacy-policy" (click)="activeLink=20" [ngClass]="{'active' : activeLink==20}"><i ></i> Privacy Policy</a></li>
+                        <li><a routerLink="/information-security" (click)="activeLink=21" [ngClass]="{'active' : activeLink==21}"><i ></i> Information Security</a></li>
+                        <li><a routerLink="/work-rule" (click)="activeLink=22" [ngClass]="{'active' : activeLink==22}"><i ></i> House Rules</a></li>
+                        <li><a routerLink="/vacation-leave" (click)="activeLink=23" [ngClass]="{'active' : activeLink==23}"><i ></i> Vacation Leave</a></li>
+                        <li><a routerLink="/bereavement-policy" (click)="activeLink=24" [ngClass]="{'active' : activeLink==24}"><i ></i> Bereavement Policy</a></li>
+                    </ul>
+                </div>
+                <!--Policies-->
+                <!--Exam-->
+                <!--This button displays when in large screen mode-->
+                <a (click)="routeWithUserName('Quiz')" class="list-group-item logo-lg" data-toggle="collapse" data-target="#exam" data-parent="#accordion">
+                    <i class="fa fa-edit"></i> Take the Exam
+                </a>
+                <!--This button displays when in small screen mode-->
+                <div class="dropdown">
+                    <a (click)="routeWithUserName('Quiz')"  class="list-group-item logo-mini">
+                        <i class="fa fa-edit fa-lg"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li (click)="routeWithUserName('Quiz')" class="dropdown-header">Take the Exam</li>
+                    </ul>
+                </div>
+                <!--Exam-->
+            </div>
+        </div>
+    </div>
+    <div class="page-content-wrapper">
+        <nav class="navbar navbar-green navbar-fixed-top" role="navigation">
+            <div class="navbar-center navbar-brand "><a href="#" class="navbar-brand">WorkPlace</a></div>
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><i class="fa fa-user-circle"></i>{{user.userName}}</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!--Put all contents here inside div text-center-->
+        <div class="main-body">
+            <div class="container-fluid">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>

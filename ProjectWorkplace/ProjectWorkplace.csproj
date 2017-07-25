@@ -1,0 +1,1472 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{44B9D1C8-7023-425E-9910-BF7F94A0EA56}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProjectWorkplace</RootNamespace>
+    <AssemblyName>ProjectWorkplace</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AnswersController.cs" />
+    <Compile Include="Controllers\ExamineesController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LeadersController.cs" />
+    <Compile Include="Controllers\PersonsController.cs" />
+    <Compile Include="Controllers\PersonTeamsController.cs" />
+    <Compile Include="Controllers\QuestionsController.cs" />
+    <Compile Include="Controllers\QuizTagsController.cs" />
+    <Compile Include="Controllers\RandQuestionsController.cs" />
+    <Compile Include="Controllers\ResourcesController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
+    <Compile Include="Controllers\SubjectsController.cs" />
+    <Compile Include="Controllers\TeamsController.cs" />
+    <Compile Include="Controllers\TemporaryUsersController.cs" />
+    <Compile Include="Controllers\UserAuthController.cs" />
+    <Compile Include="Controllers\ViewScoreController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PW_ContentReader.cs" />
+    <Compile Include="Models\PW_Answers_DTO.cs" />
+    <Compile Include="Models\ProjectWorkplaceModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectWorkplaceModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProjectWorkplaceModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectWorkplaceModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProjectWorkplaceModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectWorkplaceModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PW_Answers.cs">
+      <DependentUpon>ProjectWorkplaceModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PW_Auth_DTO.cs" />
+    <Compile Include="Models\PW_Examinees.cs">
+      <DependentUpon>ProjectWorkplaceModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PW_GetCurrentUser_Result.cs">
+      <DependentUpon>ProjectWorkplaceModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PW_GetResourcePath2_Result.cs">
+      <DependentUpon>ProjectWorkplaceModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PW_GetResourcePath_Result.cs">
+      <DependentUpon>ProjectWorkplaceModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PW_GetVideo_Result.cs">
+      <DependentUpon>ProjectWorkplaceModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PW_Leaders.cs">
+      <DependentUpon>ProjectWorkplaceModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PW_Persons.cs">
+      <DependentUpon>ProjectWorkplaceModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PW_Persons_DTO.cs" />
+    <Compile Include="Models\PW_PersonTeams.cs">
+      <DependentUpon>ProjectWorkplaceModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PW_Questions.cs">
+      <DependentUpon>ProjectWorkplaceModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PW_Questions_DTO.cs" />
+    <Compile Include="Models\PW_QuizTags.cs">
+      <DependentUpon>ProjectWorkplaceModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PW_Resources.cs">
+      <DependentUpon>ProjectWorkplaceModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PW_Roles.cs">
+      <DependentUpon>ProjectWorkplaceModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PW_Subjects.cs">
+      <DependentUpon>ProjectWorkplaceModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PW_TeamResources.cs">
+      <DependentUpon>ProjectWorkplaceModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PW_TeamResource_DTO.cs" />
+    <Compile Include="Models\PW_Teams.cs">
+      <DependentUpon>ProjectWorkplaceModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PW_Teams_DTO.cs" />
+    <Compile Include="Models\PW_TemporaryUsers.cs">
+      <DependentUpon>ProjectWorkplaceModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PW_ViewEmployeeScore.cs">
+      <DependentUpon>ProjectWorkplaceModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PW_VW_QUESTIONS.cs">
+      <DependentUpon>ProjectWorkplaceModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App\app.component.html" />
+    <Content Include="App\app.component.js" />
+    <Content Include="App\app.module.js" />
+    <Content Include="App\app.routing.js" />
+    <Content Include="App\auth-user.html" />
+    <Content Include="App\auth-user.js" />
+    <Content Include="App\components\01-disoverview\disoverview.module.js" />
+    <Content Include="App\components\01-disoverview\disoverview.routing.js" />
+    <Content Include="App\components\01-disoverview\mv.component.html" />
+    <Content Include="App\components\01-disoverview\mv.component.js" />
+    <Content Include="App\components\01-disoverview\org.component.html" />
+    <Content Include="App\components\01-disoverview\org.component.js" />
+    <Content Include="App\components\01-disoverview\programs.component.js" />
+    <Content Include="App\components\01-disoverview\sc.component.html" />
+    <Content Include="App\components\01-disoverview\sc.component.js" />
+    <Content Include="App\components\01-disoverview\strategies.component.html" />
+    <Content Include="App\components\01-disoverview\strategies.component.js" />
+    <Content Include="App\components\02-teamoverview\team-apps.component.html" />
+    <Content Include="App\components\02-teamoverview\team-apps.component.js" />
+    <Content Include="App\components\02-teamoverview\team-org.component.html" />
+    <Content Include="App\components\02-teamoverview\team-org.component.js" />
+    <Content Include="App\components\02-teamoverview\team-services.component.html" />
+    <Content Include="App\components\02-teamoverview\team-services.component.js" />
+    <Content Include="App\components\02-teamoverview\team.module.js" />
+    <Content Include="App\components\02-teamoverview\team.routing.js" />
+    <Content Include="App\components\03-leaders\avp.component.js" />
+    <Content Include="App\components\03-leaders\generic-vid.component.html" />
+    <Content Include="App\components\03-leaders\leaders.module.js" />
+    <Content Include="App\components\03-leaders\leaders.routing.js" />
+    <Content Include="App\components\03-leaders\manager.component.js" />
+    <Content Include="App\components\03-leaders\tl.component.js" />
+    <Content Include="App\components\04-distools\contacts.component.js" />
+    <Content Include="App\components\04-distools\distools.module.js" />
+    <Content Include="App\components\04-distools\distools.routing.js" />
+    <Content Include="App\components\04-distools\generic-pdf.template.html" />
+    <Content Include="App\components\04-distools\generic-pic.component.html" />
+    <Content Include="App\components\04-distools\khronos.component.js" />
+    <Content Include="App\components\04-distools\opt.component.js" />
+    <Content Include="App\components\04-distools\workday.component.js" />
+    <Content Include="App\components\05-policy\bereavement.component.js" />
+    <Content Include="App\components\05-policy\common.html" />
+    <Content Include="App\components\05-policy\information.component.js" />
+    <Content Include="App\components\05-policy\policy.module.js" />
+    <Content Include="App\components\05-policy\policy.routing.js" />
+    <Content Include="App\components\05-policy\privacy.component.js" />
+    <Content Include="App\components\05-policy\vl.component.js" />
+    <Content Include="App\components\05-policy\workrule.component.js" />
+    <Content Include="App\components\06-exam\exam-form.component.html" />
+    <Content Include="App\components\06-exam\exam-form.component.js" />
+    <Content Include="App\components\06-exam\exam.component.html" />
+    <Content Include="App\components\06-exam\exam.component.js" />
+    <Content Include="App\components\06-exam\exam.css" />
+    <Content Include="App\components\06-exam\exam.module.js" />
+    <Content Include="App\components\06-exam\exam.routing.js" />
+    <Content Include="App\components\viewer\pdf-viewer.component.js" />
+    <Content Include="App\components\viewer\photo-viewer.component.js" />
+    <Content Include="App\components\viewer\video-viewer.component.js" />
+    <Content Include="App\components\viewer\viewer.module.js" />
+    <Content Include="App\entities\answer.js" />
+    <Content Include="App\entities\auth.js" />
+    <Content Include="App\entities\examinee.js" />
+    <Content Include="App\entities\leader.js" />
+    <Content Include="App\entities\person.js" />
+    <Content Include="App\entities\question.js" />
+    <Content Include="App\entities\resource.js" />
+    <Content Include="App\entities\team.js" />
+    <Content Include="App\entities\tempuser.js" />
+    <Content Include="App\services\answer.service.js" />
+    <Content Include="App\services\auth.service.js" />
+    <Content Include="App\services\examinee.service.js" />
+    <Content Include="App\services\leader.service.js" />
+    <Content Include="App\services\person.service.js" />
+    <Content Include="App\services\random-question.service.js" />
+    <Content Include="App\services\resource.service.js" />
+    <Content Include="App\services\team.service.js" />
+    <Content Include="App\services\tempuser.service.js" />
+    <Content Include="App\welcome.css" />
+    <Content Include="App\welcome.html" />
+    <Content Include="App\welcome.js" />
+    <Content Include="App\welcome1.html" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="main.js" />
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="node_modules\%40angular\animations\bundles\animations-browser-testing.umd.js" />
+    <Content Include="node_modules\%40angular\animations\bundles\animations-browser-testing.umd.min.js" />
+    <Content Include="node_modules\%40angular\animations\bundles\animations-browser.umd.js" />
+    <Content Include="node_modules\%40angular\animations\bundles\animations-browser.umd.min.js" />
+    <Content Include="node_modules\%40angular\animations\bundles\animations.umd.js" />
+    <Content Include="node_modules\%40angular\animations\bundles\animations.umd.min.js" />
+    <Content Include="node_modules\%40angular\common\bundles\common.umd.min.js" />
+    <Content Include="node_modules\%40angular\compiler\bundles\compiler.umd.min.js" />
+    <Content Include="node_modules\%40angular\core\bundles\core.umd.min.js" />
+    <Content Include="node_modules\%40angular\forms\bundles\forms.umd.min.js" />
+    <Content Include="node_modules\%40angular\http\bundles\http.umd.min.js" />
+    <Content Include="node_modules\%40angular\material\bundles\material.umd.min.js" />
+    <Content Include="node_modules\%40angular\material\prebuilt-themes\deeppurple-amber.css" />
+    <Content Include="node_modules\%40angular\material\prebuilt-themes\indigo-pink.css" />
+    <Content Include="node_modules\%40angular\material\prebuilt-themes\pink-bluegrey.css" />
+    <Content Include="node_modules\%40angular\material\prebuilt-themes\purple-green.css" />
+    <Content Include="node_modules\%40angular\platform-browser-dynamic\bundles\platform-browser-dynamic.umd.min.js" />
+    <Content Include="node_modules\%40angular\platform-browser\bundles\platform-browser-animations.umd.min.js" />
+    <Content Include="node_modules\%40angular\platform-browser\bundles\platform-browser.umd.min.js" />
+    <Content Include="node_modules\%40angular\router\bundles\router.umd.min.js" />
+    <Content Include="node_modules\angular2-uuid\index.js" />
+    <Content Include="node_modules\bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="node_modules\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="node_modules\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="node_modules\core-js\client\shim.min.js" />
+    <Content Include="node_modules\hammerjs\hammer.min.js" />
+    <Content Include="node_modules\jquery\dist\jquery.min.js" />
+    <Content Include="node_modules\ng2-lazyload-image\index.js" />
+    <Content Include="node_modules\ng2-lazyload-image\src\lazyload-image.directive.js" />
+    <Content Include="node_modules\ng2-lazyload-image\src\lazyload-image.js" />
+    <Content Include="node_modules\ng2-lazyload-image\src\lazyload-image.module.js" />
+    <Content Include="node_modules\ng2-lazyload-image\src\scroll-listener.js" />
+    <Content Include="node_modules\ng2-pdf-viewer\dist\index.js" />
+    <Content Include="node_modules\ng2-pdf-viewer\dist\pdf-viewer.component.js" />
+    <Content Include="node_modules\ngx-bootstrap\bundles\ngx-bootstrap.umd.min.js" />
+    <Content Include="node_modules\pdfjs-dist\build\pdf.combined.js" />
+    <Content Include="node_modules\pdfjs-dist\build\pdf.js" />
+    <Content Include="node_modules\pdfjs-dist\build\pdf.min.js" />
+    <Content Include="node_modules\pdfjs-dist\build\pdf.worker.entry.js" />
+    <Content Include="node_modules\pdfjs-dist\build\pdf.worker.js" />
+    <Content Include="node_modules\pdfjs-dist\build\pdf.worker.min.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\annotation.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\arithmetic_decoder.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\bidi.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\cff_parser.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\charsets.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\chunked_stream.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\cmap.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\colorspace.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\crypto.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\document.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\encodings.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\evaluator.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\fonts.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\font_renderer.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\function.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\glyphlist.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\image.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\jbig2.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\jpg.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\jpx.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\metrics.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\murmurhash3.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\network.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\obj.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\parser.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\pattern.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\pdf_manager.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\primitives.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\ps_parser.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\standard_fonts.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\stream.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\type1_parser.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\unicode.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\core\worker.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\display\annotation_layer.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\display\api.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\display\canvas.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\display\dom_utils.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\display\font_loader.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\display\global.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\display\metadata.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\display\pattern_helper.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\display\svg.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\display\text_layer.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\display\webgl.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\pdf.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\pdf.worker.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\shared\compatibility.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\shared\util.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\test\unit\annotation_spec.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\test\unit\api_spec.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\test\unit\bidi_spec.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\test\unit\cff_parser_spec.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\test\unit\cmap_spec.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\test\unit\crypto_spec.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\test\unit\document_spec.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\test\unit\dom_utils_spec.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\test\unit\evaluator_spec.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\test\unit\fonts_spec.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\test\unit\function_spec.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\test\unit\jasmine-boot.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\test\unit\metadata_spec.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\test\unit\murmurhash3_spec.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\test\unit\network_spec.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\test\unit\parser_spec.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\test\unit\primitives_spec.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\test\unit\stream_spec.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\test\unit\testreporter.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\test\unit\test_utils.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\test\unit\type1_parser_spec.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\test\unit\ui_utils_spec.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\test\unit\unicode_spec.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\test\unit\util_spec.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\annotation_layer_builder.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\app.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\chromecom.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\debugger.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\dom_events.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\download_manager.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\firefoxcom.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\firefox_print_service.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\genericcom.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\grab_to_pan.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\hand_tool.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\interfaces.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\overlay_manager.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\password_prompt.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\pdfjs.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\pdf_attachment_viewer.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\pdf_document_properties.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\pdf_find_bar.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\pdf_find_controller.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\pdf_history.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\pdf_link_service.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\pdf_outline_viewer.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\pdf_page_view.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\pdf_presentation_mode.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\pdf_print_service.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\pdf_rendering_queue.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\pdf_sidebar.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\pdf_thumbnail_view.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\pdf_thumbnail_viewer.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\pdf_viewer.component.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\pdf_viewer.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\preferences.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\secondary_toolbar.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\text_layer_builder.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\toolbar.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\ui_utils.js" />
+    <Content Include="node_modules\pdfjs-dist\lib\web\view_history.js" />
+    <Content Include="node_modules\pdfjs-dist\webpack.js" />
+    <Content Include="node_modules\pdfjs-dist\web\compatibility.js" />
+    <Content Include="node_modules\pdfjs-dist\web\images\annotation-check.svg" />
+    <Content Include="node_modules\pdfjs-dist\web\images\annotation-comment.svg" />
+    <Content Include="node_modules\pdfjs-dist\web\images\annotation-help.svg" />
+    <Content Include="node_modules\pdfjs-dist\web\images\annotation-insert.svg" />
+    <Content Include="node_modules\pdfjs-dist\web\images\annotation-key.svg" />
+    <Content Include="node_modules\pdfjs-dist\web\images\annotation-newparagraph.svg" />
+    <Content Include="node_modules\pdfjs-dist\web\images\annotation-noicon.svg" />
+    <Content Include="node_modules\pdfjs-dist\web\images\annotation-note.svg" />
+    <Content Include="node_modules\pdfjs-dist\web\images\annotation-paragraph.svg" />
+    <Content Include="node_modules\pdfjs-dist\web\images\loading-icon.gif" />
+    <Content Include="node_modules\pdfjs-dist\web\images\shadow.png" />
+    <Content Include="node_modules\pdfjs-dist\web\images\texture.png" />
+    <Content Include="node_modules\pdfjs-dist\web\pdf_viewer.css" />
+    <Content Include="node_modules\pdfjs-dist\web\pdf_viewer.js" />
+    <Content Include="node_modules\rxjs\add\observable\empty.js" />
+    <Content Include="node_modules\rxjs\add\observable\forkJoin.js" />
+    <Content Include="node_modules\rxjs\add\observable\from.js" />
+    <Content Include="node_modules\rxjs\add\observable\fromEvent.js" />
+    <Content Include="node_modules\rxjs\add\observable\merge.js" />
+    <Content Include="node_modules\rxjs\add\observable\of.js" />
+    <Content Include="node_modules\rxjs\add\observable\throw.js" />
+    <Content Include="node_modules\rxjs\add\operator\auditTime.js" />
+    <Content Include="node_modules\rxjs\add\operator\catch.js" />
+    <Content Include="node_modules\rxjs\add\operator\debounceTime.js" />
+    <Content Include="node_modules\rxjs\add\operator\do.js" />
+    <Content Include="node_modules\rxjs\add\operator\filter.js" />
+    <Content Include="node_modules\rxjs\add\operator\finally.js" />
+    <Content Include="node_modules\rxjs\add\operator\first.js" />
+    <Content Include="node_modules\rxjs\add\operator\let.js" />
+    <Content Include="node_modules\rxjs\add\operator\map.js" />
+    <Content Include="node_modules\rxjs\add\operator\mergeMap.js" />
+    <Content Include="node_modules\rxjs\add\operator\sampleTime.js" />
+    <Content Include="node_modules\rxjs\add\operator\share.js" />
+    <Content Include="node_modules\rxjs\add\operator\startWith.js" />
+    <Content Include="node_modules\rxjs\add\operator\switchMap.js" />
+    <Content Include="node_modules\rxjs\add\operator\take.js" />
+    <Content Include="node_modules\rxjs\add\operator\toArray.js" />
+    <Content Include="node_modules\rxjs\add\operator\toPromise.js" />
+    <Content Include="node_modules\rxjs\AsyncSubject.js" />
+    <Content Include="node_modules\rxjs\BehaviorSubject.js" />
+    <Content Include="node_modules\rxjs\InnerSubscriber.js" />
+    <Content Include="node_modules\rxjs\Notification.js" />
+    <Content Include="node_modules\rxjs\Observable.js" />
+    <Content Include="node_modules\rxjs\observable\ArrayLikeObservable.js" />
+    <Content Include="node_modules\rxjs\observable\ArrayObservable.js" />
+    <Content Include="node_modules\rxjs\observable\bindCallback.js" />
+    <Content Include="node_modules\rxjs\observable\bindNodeCallback.js" />
+    <Content Include="node_modules\rxjs\observable\BoundCallbackObservable.js" />
+    <Content Include="node_modules\rxjs\observable\BoundNodeCallbackObservable.js" />
+    <Content Include="node_modules\rxjs\observable\combineLatest.js" />
+    <Content Include="node_modules\rxjs\observable\concat.js" />
+    <Content Include="node_modules\rxjs\observable\ConnectableObservable.js" />
+    <Content Include="node_modules\rxjs\observable\defer.js" />
+    <Content Include="node_modules\rxjs\observable\DeferObservable.js" />
+    <Content Include="node_modules\rxjs\observable\dom\ajax.js" />
+    <Content Include="node_modules\rxjs\observable\dom\AjaxObservable.js" />
+    <Content Include="node_modules\rxjs\observable\dom\webSocket.js" />
+    <Content Include="node_modules\rxjs\observable\dom\WebSocketSubject.js" />
+    <Content Include="node_modules\rxjs\observable\empty.js" />
+    <Content Include="node_modules\rxjs\observable\EmptyObservable.js" />
+    <Content Include="node_modules\rxjs\observable\ErrorObservable.js" />
+    <Content Include="node_modules\rxjs\observable\forkJoin.js" />
+    <Content Include="node_modules\rxjs\observable\ForkJoinObservable.js" />
+    <Content Include="node_modules\rxjs\observable\from.js" />
+    <Content Include="node_modules\rxjs\observable\fromEvent.js" />
+    <Content Include="node_modules\rxjs\observable\FromEventObservable.js" />
+    <Content Include="node_modules\rxjs\observable\fromEventPattern.js" />
+    <Content Include="node_modules\rxjs\observable\FromEventPatternObservable.js" />
+    <Content Include="node_modules\rxjs\observable\FromObservable.js" />
+    <Content Include="node_modules\rxjs\observable\fromPromise.js" />
+    <Content Include="node_modules\rxjs\observable\GenerateObservable.js" />
+    <Content Include="node_modules\rxjs\observable\if.js" />
+    <Content Include="node_modules\rxjs\observable\IfObservable.js" />
+    <Content Include="node_modules\rxjs\observable\interval.js" />
+    <Content Include="node_modules\rxjs\observable\IntervalObservable.js" />
+    <Content Include="node_modules\rxjs\observable\IteratorObservable.js" />
+    <Content Include="node_modules\rxjs\observable\merge.js" />
+    <Content Include="node_modules\rxjs\observable\never.js" />
+    <Content Include="node_modules\rxjs\observable\NeverObservable.js" />
+    <Content Include="node_modules\rxjs\observable\of.js" />
+    <Content Include="node_modules\rxjs\observable\pairs.js" />
+    <Content Include="node_modules\rxjs\observable\PairsObservable.js" />
+    <Content Include="node_modules\rxjs\observable\PromiseObservable.js" />
+    <Content Include="node_modules\rxjs\observable\range.js" />
+    <Content Include="node_modules\rxjs\observable\RangeObservable.js" />
+    <Content Include="node_modules\rxjs\observable\ScalarObservable.js" />
+    <Content Include="node_modules\rxjs\observable\SubscribeOnObservable.js" />
+    <Content Include="node_modules\rxjs\observable\throw.js" />
+    <Content Include="node_modules\rxjs\observable\timer.js" />
+    <Content Include="node_modules\rxjs\observable\TimerObservable.js" />
+    <Content Include="node_modules\rxjs\observable\using.js" />
+    <Content Include="node_modules\rxjs\observable\UsingObservable.js" />
+    <Content Include="node_modules\rxjs\observable\zip.js" />
+    <Content Include="node_modules\rxjs\Observer.js" />
+    <Content Include="node_modules\rxjs\Operator.js" />
+    <Content Include="node_modules\rxjs\operator\audit.js" />
+    <Content Include="node_modules\rxjs\operator\auditTime.js" />
+    <Content Include="node_modules\rxjs\operator\buffer.js" />
+    <Content Include="node_modules\rxjs\operator\bufferCount.js" />
+    <Content Include="node_modules\rxjs\operator\bufferTime.js" />
+    <Content Include="node_modules\rxjs\operator\bufferToggle.js" />
+    <Content Include="node_modules\rxjs\operator\bufferWhen.js" />
+    <Content Include="node_modules\rxjs\operator\catch.js" />
+    <Content Include="node_modules\rxjs\operator\combineAll.js" />
+    <Content Include="node_modules\rxjs\operator\combineLatest.js" />
+    <Content Include="node_modules\rxjs\operator\concat.js" />
+    <Content Include="node_modules\rxjs\operator\concatAll.js" />
+    <Content Include="node_modules\rxjs\operator\concatMap.js" />
+    <Content Include="node_modules\rxjs\operator\concatMapTo.js" />
+    <Content Include="node_modules\rxjs\operator\count.js" />
+    <Content Include="node_modules\rxjs\operator\debounce.js" />
+    <Content Include="node_modules\rxjs\operator\debounceTime.js" />
+    <Content Include="node_modules\rxjs\operator\defaultIfEmpty.js" />
+    <Content Include="node_modules\rxjs\operator\delay.js" />
+    <Content Include="node_modules\rxjs\operator\delayWhen.js" />
+    <Content Include="node_modules\rxjs\operator\dematerialize.js" />
+    <Content Include="node_modules\rxjs\operator\distinct.js" />
+    <Content Include="node_modules\rxjs\operator\distinctUntilChanged.js" />
+    <Content Include="node_modules\rxjs\operator\distinctUntilKeyChanged.js" />
+    <Content Include="node_modules\rxjs\operator\do.js" />
+    <Content Include="node_modules\rxjs\operator\elementAt.js" />
+    <Content Include="node_modules\rxjs\operator\every.js" />
+    <Content Include="node_modules\rxjs\operator\exhaust.js" />
+    <Content Include="node_modules\rxjs\operator\exhaustMap.js" />
+    <Content Include="node_modules\rxjs\operator\expand.js" />
+    <Content Include="node_modules\rxjs\operator\filter.js" />
+    <Content Include="node_modules\rxjs\operator\finally.js" />
+    <Content Include="node_modules\rxjs\operator\find.js" />
+    <Content Include="node_modules\rxjs\operator\findIndex.js" />
+    <Content Include="node_modules\rxjs\operator\first.js" />
+    <Content Include="node_modules\rxjs\operator\groupBy.js" />
+    <Content Include="node_modules\rxjs\operator\ignoreElements.js" />
+    <Content Include="node_modules\rxjs\operator\isEmpty.js" />
+    <Content Include="node_modules\rxjs\operator\last.js" />
+    <Content Include="node_modules\rxjs\operator\let.js" />
+    <Content Include="node_modules\rxjs\operator\map.js" />
+    <Content Include="node_modules\rxjs\operator\mapTo.js" />
+    <Content Include="node_modules\rxjs\operator\materialize.js" />
+    <Content Include="node_modules\rxjs\operator\max.js" />
+    <Content Include="node_modules\rxjs\operator\merge.js" />
+    <Content Include="node_modules\rxjs\operator\mergeAll.js" />
+    <Content Include="node_modules\rxjs\operator\mergeMap.js" />
+    <Content Include="node_modules\rxjs\operator\mergeMapTo.js" />
+    <Content Include="node_modules\rxjs\operator\mergeScan.js" />
+    <Content Include="node_modules\rxjs\operator\min.js" />
+    <Content Include="node_modules\rxjs\operator\multicast.js" />
+    <Content Include="node_modules\rxjs\operator\observeOn.js" />
+    <Content Include="node_modules\rxjs\operator\onErrorResumeNext.js" />
+    <Content Include="node_modules\rxjs\operator\pairwise.js" />
+    <Content Include="node_modules\rxjs\operator\partition.js" />
+    <Content Include="node_modules\rxjs\operator\pluck.js" />
+    <Content Include="node_modules\rxjs\operator\publish.js" />
+    <Content Include="node_modules\rxjs\operator\publishBehavior.js" />
+    <Content Include="node_modules\rxjs\operator\publishLast.js" />
+    <Content Include="node_modules\rxjs\operator\publishReplay.js" />
+    <Content Include="node_modules\rxjs\operator\race.js" />
+    <Content Include="node_modules\rxjs\operator\reduce.js" />
+    <Content Include="node_modules\rxjs\operator\repeat.js" />
+    <Content Include="node_modules\rxjs\operator\repeatWhen.js" />
+    <Content Include="node_modules\rxjs\operator\retry.js" />
+    <Content Include="node_modules\rxjs\operator\retryWhen.js" />
+    <Content Include="node_modules\rxjs\operator\sample.js" />
+    <Content Include="node_modules\rxjs\operator\sampleTime.js" />
+    <Content Include="node_modules\rxjs\operator\scan.js" />
+    <Content Include="node_modules\rxjs\operator\sequenceEqual.js" />
+    <Content Include="node_modules\rxjs\operator\share.js" />
+    <Content Include="node_modules\rxjs\operator\single.js" />
+    <Content Include="node_modules\rxjs\operator\skip.js" />
+    <Content Include="node_modules\rxjs\operator\skipUntil.js" />
+    <Content Include="node_modules\rxjs\operator\skipWhile.js" />
+    <Content Include="node_modules\rxjs\operator\startWith.js" />
+    <Content Include="node_modules\rxjs\operator\subscribeOn.js" />
+    <Content Include="node_modules\rxjs\operator\switch.js" />
+    <Content Include="node_modules\rxjs\operator\switchMap.js" />
+    <Content Include="node_modules\rxjs\operator\switchMapTo.js" />
+    <Content Include="node_modules\rxjs\operator\take.js" />
+    <Content Include="node_modules\rxjs\operator\takeLast.js" />
+    <Content Include="node_modules\rxjs\operator\takeUntil.js" />
+    <Content Include="node_modules\rxjs\operator\takeWhile.js" />
+    <Content Include="node_modules\rxjs\operator\throttle.js" />
+    <Content Include="node_modules\rxjs\operator\throttleTime.js" />
+    <Content Include="node_modules\rxjs\operator\timeInterval.js" />
+    <Content Include="node_modules\rxjs\operator\timeout.js" />
+    <Content Include="node_modules\rxjs\operator\timeoutWith.js" />
+    <Content Include="node_modules\rxjs\operator\timestamp.js" />
+    <Content Include="node_modules\rxjs\operator\toArray.js" />
+    <Content Include="node_modules\rxjs\operator\toPromise.js" />
+    <Content Include="node_modules\rxjs\operator\window.js" />
+    <Content Include="node_modules\rxjs\operator\windowCount.js" />
+    <Content Include="node_modules\rxjs\operator\windowTime.js" />
+    <Content Include="node_modules\rxjs\operator\windowToggle.js" />
+    <Content Include="node_modules\rxjs\operator\windowWhen.js" />
+    <Content Include="node_modules\rxjs\operator\withLatestFrom.js" />
+    <Content Include="node_modules\rxjs\operator\zip.js" />
+    <Content Include="node_modules\rxjs\operator\zipAll.js" />
+    <Content Include="node_modules\rxjs\OuterSubscriber.js" />
+    <Content Include="node_modules\rxjs\ReplaySubject.js" />
+    <Content Include="node_modules\rxjs\Rx.js" />
+    <Content Include="node_modules\rxjs\Scheduler.js" />
+    <Content Include="node_modules\rxjs\scheduler\Action.js" />
+    <Content Include="node_modules\rxjs\scheduler\async.js" />
+    <Content Include="node_modules\rxjs\scheduler\AsyncAction.js" />
+    <Content Include="node_modules\rxjs\scheduler\AsyncScheduler.js" />
+    <Content Include="node_modules\rxjs\Subject.js" />
+    <Content Include="node_modules\rxjs\SubjectSubscription.js" />
+    <Content Include="node_modules\rxjs\Subscriber.js" />
+    <Content Include="node_modules\rxjs\Subscription.js" />
+    <Content Include="node_modules\rxjs\symbol\iterator.js" />
+    <Content Include="node_modules\rxjs\symbol\observable.js" />
+    <Content Include="node_modules\rxjs\symbol\rxSubscriber.js" />
+    <Content Include="node_modules\rxjs\util\AnimationFrame.js" />
+    <Content Include="node_modules\rxjs\util\applyMixins.js" />
+    <Content Include="node_modules\rxjs\util\ArgumentOutOfRangeError.js" />
+    <Content Include="node_modules\rxjs\util\assign.js" />
+    <Content Include="node_modules\rxjs\util\EmptyError.js" />
+    <Content Include="node_modules\rxjs\util\errorObject.js" />
+    <Content Include="node_modules\rxjs\util\FastMap.js" />
+    <Content Include="node_modules\rxjs\util\Immediate.js" />
+    <Content Include="node_modules\rxjs\util\isArray.js" />
+    <Content Include="node_modules\rxjs\util\isDate.js" />
+    <Content Include="node_modules\rxjs\util\isFunction.js" />
+    <Content Include="node_modules\rxjs\util\isNumeric.js" />
+    <Content Include="node_modules\rxjs\util\isObject.js" />
+    <Content Include="node_modules\rxjs\util\isPromise.js" />
+    <Content Include="node_modules\rxjs\util\isScheduler.js" />
+    <Content Include="node_modules\rxjs\util\Map.js" />
+    <Content Include="node_modules\rxjs\util\MapPolyfill.js" />
+    <Content Include="node_modules\rxjs\util\noop.js" />
+    <Content Include="node_modules\rxjs\util\not.js" />
+    <Content Include="node_modules\rxjs\util\ObjectUnsubscribedError.js" />
+    <Content Include="node_modules\rxjs\util\root.js" />
+    <Content Include="node_modules\rxjs\util\Set.js" />
+    <Content Include="node_modules\rxjs\util\subscribeToResult.js" />
+    <Content Include="node_modules\rxjs\util\TimeoutError.js" />
+    <Content Include="node_modules\rxjs\util\toSubscriber.js" />
+    <Content Include="node_modules\rxjs\util\tryCatch.js" />
+    <Content Include="node_modules\rxjs\util\UnsubscriptionError.js" />
+    <Content Include="node_modules\systemjs\dist\system.js" />
+    <Content Include="node_modules\zone.js\dist\zone.min.js" />
+    <Content Include="node_modules\zone.js\dist\zone.min1.js" />
+    <Content Include="resources\background.png" />
+    <Content Include="resources\Images\background.jpg" />
+    <Content Include="resources\Images\background.png" />
+    <Content Include="resources\Images\JohnHancock.png" />
+    <Content Include="resources\Images\Manulife.png" />
+    <Content Include="resources\Images\Manulife_Logo.old.png" />
+    <Content Include="resources\Images\Manulife_Logo.png" />
+    <Content Include="resources\Images\Manulife_Logo_Small.png" />
+    <Content Include="resources\mock\videoplayback.mp4" />
+    <Content Include="resources\workplace\01DIS OVERVIEW\01-Mission Vision.png" />
+    <Content Include="resources\workplace\01DIS OVERVIEW\02-Organizational Chart.jpg" />
+    <Content Include="resources\workplace\01DIS OVERVIEW\03-Strategies.png" />
+    <Content Include="resources\workplace\01DIS OVERVIEW\04-Functional Tower.jpg" />
+    <Content Include="resources\workplace\01DIS OVERVIEW\functional towers.jpg" />
+    <Content Include="resources\workplace\01DIS OVERVIEW\functional towers2.jpg" />
+    <Content Include="resources\workplace\01DIS OVERVIEW\Programs\Aspire.JPG" />
+    <Content Include="resources\workplace\01DIS OVERVIEW\Programs\Careers.JPG" />
+    <Content Include="resources\workplace\01DIS OVERVIEW\Programs\Cares.JPG" />
+    <Content Include="resources\workplace\01DIS OVERVIEW\Programs\Digerati.JPG" />
+    <Content Include="resources\workplace\01DIS OVERVIEW\Programs\Motivate.jpg" />
+    <Content Include="resources\workplace\01DIS OVERVIEW\Strategies\03a - customer experience.png" />
+    <Content Include="resources\workplace\01DIS OVERVIEW\Strategies\03b - process improvement.png" />
+    <Content Include="resources\workplace\01DIS OVERVIEW\Strategies\03c - cost efficiencies.png" />
+    <Content Include="resources\workplace\01DIS OVERVIEW\Strategies\03d - performance.png" />
+    <Content Include="resources\workplace\01DIS OVERVIEW\Strategies\strategies.jpg" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Apps\Slide1.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Apps\Slide10.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Apps\Slide11.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Apps\Slide12.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Apps\Slide13.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Apps\Slide14.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Apps\Slide15.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Apps\Slide16.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Apps\Slide17.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Apps\Slide18.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Apps\Slide19.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Apps\Slide2.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Apps\Slide20.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Apps\Slide21.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Apps\Slide22.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Apps\Slide23.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Apps\Slide24.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Apps\Slide25.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Apps\Slide26.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Apps\Slide27.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Apps\Slide28.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Apps\Slide29.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Apps\Slide3.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Apps\Slide30.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Apps\Slide31.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Apps\Slide32.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Apps\Slide33.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Apps\Slide4.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Apps\Slide5.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Apps\Slide6.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Apps\Slide7.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Apps\Slide8.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Apps\Slide9.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Images\albert.jpg" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Images\default.PNG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Images\eros.jpg" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Images\gk.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Images\jeng.jpg" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Images\joys.jpg" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Images\la.jpg" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Images\mat.jpg" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Images\nick.jpg" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\sample.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Scripts\jquery.min.js" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\bootstrap-3.3.7-dist\css\bootstrap-theme.css" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\bootstrap-3.3.7-dist\css\bootstrap-theme.min.css" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\bootstrap-3.3.7-dist\css\bootstrap.css" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\bootstrap-3.3.7-dist\css\bootstrap.min.css" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\bootstrap-3.3.7-dist\js\bootstrap.js" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\bootstrap-3.3.7-dist\js\bootstrap.min.js" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\bootstrap-3.3.7-dist\js\npm.js" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\OrgChart.css" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\SideNav.css" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\Site.css" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\teamorg_applicationdevelopment.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\teamorg_applicationsupport.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\teamorg_businessintelligence.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\teamorg_cdninstisrm.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\teamorg_cdnretailsrm.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\teamorg_customerexperiencemanagement.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\teamorg_esd.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\teamorg_globalreporting.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\teamorg_gsddatabaseadministration.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\teamorg_gsddigitalandcollaborationplatformservices.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\teamorg_gsdgfl2appsupport.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\teamorg_gsdifsissupport.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\teamorg_gsdinvappsupport.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\teamorg_gsdinvestmentinformationservices.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\teamorg_gsdisaccountingsupport.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\teamorg_gsdplatformadmin.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\teamorg_gsdpmas.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\teamorg_gsdproductionservices.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\teamorg_gsdqlikviewdevelopment.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\teamorg_gsdreleasemanagement.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\teamorg_gsdschedulingautomation.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\teamorg_gsdsystemadministrator.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\teamorg_gsdsystemsandplatformoperationservices.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\teamorg_integrationtechservices.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\teamorg_jhdevelopmentandsupportservices.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\teamorg_jhinfosecmgt.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\teamorg_jhitops.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\teamorg_jhsasdatabase.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\teamorg_jhsasdatamasking.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\teamorg_jhsasplatformservices.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\teamorg_jhsasrem.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\teamorg_jhtass.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\teamorg_transitionservices.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\temp.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Services\Slide1.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Services\Slide10.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Services\Slide11.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Services\Slide12.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Services\Slide13.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Services\Slide14.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Services\Slide15.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Services\Slide16.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Services\Slide17.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Services\Slide18.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Services\Slide19.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Services\Slide2.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Services\Slide20.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Services\Slide21.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Services\Slide22.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Services\Slide23.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Services\Slide24.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Services\Slide25.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Services\Slide26.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Services\Slide27.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Services\Slide28.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Services\Slide29.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Services\Slide3.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Services\Slide30.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Services\Slide31.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Services\Slide32.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Services\Slide33.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Services\Slide4.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Services\Slide5.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Services\Slide6.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Services\Slide7.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Services\Slide8.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Services\Slide9.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Apps\Slide1.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Apps\Slide10.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Apps\Slide11.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Apps\Slide12.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Apps\Slide13.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Apps\Slide14.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Apps\Slide15.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Apps\Slide16.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Apps\Slide17.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Apps\Slide18.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Apps\Slide19.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Apps\Slide2.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Apps\Slide20.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Apps\Slide21.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Apps\Slide22.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Apps\Slide23.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Apps\Slide24.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Apps\Slide25.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Apps\Slide26.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Apps\Slide27.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Apps\Slide28.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Apps\Slide29.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Apps\Slide3.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Apps\Slide30.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Apps\Slide31.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Apps\Slide32.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Apps\Slide33.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Apps\Slide4.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Apps\Slide5.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Apps\Slide6.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Apps\Slide7.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Apps\Slide8.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Apps\Slide9.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Images\albert.jpg" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Images\default.PNG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Images\eros.jpg" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Images\gk.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Images\jeng.jpg" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Images\joys.jpg" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Images\la.jpg" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Images\mat.jpg" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Images\nick.jpg" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\sample.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Scripts\jquery.min.js" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\bootstrap-3.3.7-dist\css\bootstrap-theme.css" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\bootstrap-3.3.7-dist\css\bootstrap-theme.min.css" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\bootstrap-3.3.7-dist\css\bootstrap.css" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\bootstrap-3.3.7-dist\css\bootstrap.min.css" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\bootstrap-3.3.7-dist\js\bootstrap.js" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\bootstrap-3.3.7-dist\js\bootstrap.min.js" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\bootstrap-3.3.7-dist\js\npm.js" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\OrgChart.css" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\SideNav.css" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\Site.css" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\teamorg_applicationdevelopment.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\teamorg_applicationsupport.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\teamorg_businessintelligence.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\teamorg_cdninstisrm.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\teamorg_cdnretailsrm.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\teamorg_customerexperiencemanagement.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\teamorg_esd.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\teamorg_globalreporting.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\teamorg_gsddatabaseadministration.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\teamorg_gsddigitalandcollaborationplatformservices.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\teamorg_gsdgfl2appsupport.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\teamorg_gsdifsissupport.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\teamorg_gsdinvappsupport.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\teamorg_gsdinvestmentinformationservices.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\teamorg_gsdisaccountingsupport.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\teamorg_gsdplatformadmin.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\teamorg_gsdpmas.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\teamorg_gsdproductionservices.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\teamorg_gsdqlikviewdevelopment.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\teamorg_gsdreleasemanagement.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\teamorg_gsdschedulingautomation.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\teamorg_gsdsystemadministrator.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\teamorg_gsdsystemsandplatformoperationservices.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\teamorg_integrationtechservices.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\teamorg_jhdevelopmentandsupportservices.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\teamorg_jhinfosecmgt.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\teamorg_jhitops.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\teamorg_jhsasdatabase.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\teamorg_jhsasdatamasking.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\teamorg_jhsasplatformservices.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\teamorg_jhsasrem.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\teamorg_jhtass.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\teamorg_transitionservices.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\temp.html" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Services\Slide1.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Services\Slide10.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Services\Slide11.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Services\Slide12.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Services\Slide13.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Services\Slide14.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Services\Slide15.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Services\Slide16.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Services\Slide17.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Services\Slide18.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Services\Slide19.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Services\Slide2.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Services\Slide20.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Services\Slide21.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Services\Slide22.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Services\Slide23.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Services\Slide24.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Services\Slide25.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Services\Slide26.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Services\Slide27.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Services\Slide28.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Services\Slide29.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Services\Slide3.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Services\Slide30.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Services\Slide31.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Services\Slide32.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Services\Slide33.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Services\Slide4.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Services\Slide5.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Services\Slide6.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Services\Slide7.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Services\Slide8.JPG" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Services\Slide9.JPG" />
+    <Content Include="resources\workplace\03LEADERS\ana.mp4" />
+    <Content Include="resources\workplace\03LEADERS\arvan.mp4" />
+    <Content Include="resources\workplace\03LEADERS\cyren.mp4" />
+    <Content Include="resources\workplace\03LEADERS\denmar.mp4" />
+    <Content Include="resources\workplace\03LEADERS\DSS.mp4" />
+    <Content Include="resources\workplace\03LEADERS\Gelo.mp4" />
+    <Content Include="resources\workplace\03LEADERS\gk.mp4" />
+    <Content Include="resources\workplace\03LEADERS\Harri.mp4" />
+    <Content Include="resources\workplace\03LEADERS\inah.mp4" />
+    <Content Include="resources\workplace\03LEADERS\Joyce.mp4" />
+    <Content Include="resources\workplace\03LEADERS\Kenneth.mp4" />
+    <Content Include="resources\workplace\03LEADERS\leny.mp4" />
+    <Content Include="resources\workplace\03LEADERS\paulyn.mp4" />
+    <Content Include="resources\workplace\03LEADERS\rex.mp4" />
+    <Content Include="resources\workplace\03LEADERS\richard.mp4" />
+    <Content Include="resources\workplace\03LEADERS\roztle.mp4" />
+    <Content Include="resources\workplace\03LEADERS\rudi.mp4" />
+    <Content Include="resources\workplace\03LEADERS\ryan.mp4" />
+    <Content Include="resources\workplace\03LEADERS\tim.mp4" />
+    <Content Include="resources\workplace\03LEADERS\yerrick.mp4" />
+    <Content Include="resources\workplace\04DIS TOOLS\01OPT.pdf" />
+    <Content Include="resources\workplace\04DIS TOOLS\03Khronos.pdf" />
+    <Content Include="resources\workplace\04DIS TOOLS\MBPS Hotlines.jpg" />
+    <Content Include="resources\workplace\05POLICIES\Bereavement Policy.pdf" />
+    <Content Include="resources\workplace\05POLICIES\VACATION LEAVE.pdf" />
+    <Content Include="resources\workplace\05POLICIES\WORK RULES.pdf" />
+    <Content Include="resources\workplace\OLD\03 - Mission vision.old.jpg" />
+    <Content Include="resources\workplace\OLD\03 - Mission vision.png" />
+    <Content Include="resources\workplace\OLD\04 - Functional Tower.jpg" />
+    <Content Include="resources\workplace\OLD\04 - orgChart.jpg" />
+    <Content Include="resources\workplace\OLD\04 - orgChart.old.jpg" />
+    <Content Include="resources\workplace\OLD\05 - strategies\DISStrategies.pptx.png" />
+    <Content Include="resources\workplace\OLD\05 - stratergies.jpg" />
+    <Content Include="resources\workplace\OLD\06 - service catalogue.old\ServiceCatalogue_GlobalReportAndDigitalStrategy.png" />
+    <Content Include="resources\workplace\OLD\06 - service catalogue.old\ServiceCatalogue_ISOps.png" />
+    <Content Include="resources\workplace\OLD\06 - service catalogue.old\ServiceCatalogue_SocialMediaServices.png" />
+    <Content Include="resources\workplace\OLD\16 - OPT doc.pdf" />
+    <Content Include="resources\workplace\OLD\18 - Khronos.pdf" />
+    <Content Include="resources\workplace\OLD\19 - WORK RULES.FINAL.old.pdf" />
+    <Content Include="resources\workplace\OLD\19 - WORK RULES.FINAL.pdf" />
+    <Content Include="resources\workplace\OLD\20 - Vacation Leave.pdf" />
+    <Content Include="resources\workplace\Workplace Questions.txt" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Properties\PublishProfiles\Dev.pubxml" />
+    <None Include="Scripts\_references.js" />
+    <Content Include="styles.css" />
+    <Content Include="styles1.css" />
+    <Content Include="Styles\font-awesome.min.css" />
+    <Content Include="Styles\SideNav.css" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="systemjs-angular-loader.js" />
+    <Content Include="systemjs.config.extras.js" />
+    <Content Include="systemjs.config.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\ProjectWorkplaceModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ProjectWorkplaceModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Models\ProjectWorkplaceModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ProjectWorkplaceModel.edmx</DependentUpon>
+      <LastGenOutput>ProjectWorkplaceModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ProjectWorkplaceModel.edmx.diagram">
+      <DependentUpon>ProjectWorkplaceModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ProjectWorkplaceModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ProjectWorkplaceModel.edmx</DependentUpon>
+      <LastGenOutput>ProjectWorkplaceModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="node_modules\%40angular\animations\bundles\animations-browser-testing.umd.js.map" />
+    <Content Include="node_modules\%40angular\animations\bundles\animations-browser-testing.umd.min.js.map" />
+    <Content Include="node_modules\%40angular\animations\bundles\animations-browser.umd.js.map" />
+    <Content Include="node_modules\%40angular\animations\bundles\animations-browser.umd.min.js.map" />
+    <Content Include="node_modules\%40angular\animations\bundles\animations.umd.js.map" />
+    <Content Include="node_modules\%40angular\animations\bundles\animations.umd.min.js.map" />
+    <Content Include="node_modules\ng2-lazyload-image\index.metadata.json" />
+    <Content Include="node_modules\ng2-lazyload-image\index.ngsummary.json" />
+    <Content Include="node_modules\ng2-lazyload-image\LICENSE" />
+    <Content Include="node_modules\ng2-lazyload-image\package.json" />
+    <Content Include="node_modules\ng2-lazyload-image\README.md" />
+    <Content Include="node_modules\ng2-lazyload-image\src\lazyload-image.directive.metadata.json" />
+    <Content Include="node_modules\ng2-lazyload-image\src\lazyload-image.directive.ngsummary.json" />
+    <Content Include="node_modules\ng2-lazyload-image\src\lazyload-image.metadata.json" />
+    <Content Include="node_modules\ng2-lazyload-image\src\lazyload-image.module.metadata.json" />
+    <Content Include="node_modules\ng2-lazyload-image\src\lazyload-image.module.ngsummary.json" />
+    <Content Include="node_modules\ng2-lazyload-image\src\lazyload-image.ngsummary.json" />
+    <Content Include="node_modules\ng2-lazyload-image\src\scroll-listener.metadata.json" />
+    <Content Include="node_modules\ng2-lazyload-image\src\scroll-listener.ngsummary.json" />
+    <Content Include="node_modules\ng2-pdf-viewer\CHANGELOG.md" />
+    <Content Include="node_modules\ng2-pdf-viewer\dist\index.js.map" />
+    <Content Include="node_modules\ng2-pdf-viewer\dist\index.metadata.json" />
+    <Content Include="node_modules\ng2-pdf-viewer\dist\pdf-viewer.component.js.map" />
+    <Content Include="node_modules\ng2-pdf-viewer\dist\pdf-viewer.component.metadata.json" />
+    <Content Include="node_modules\ng2-pdf-viewer\LICENSE.md" />
+    <Content Include="node_modules\ng2-pdf-viewer\package.json" />
+    <Content Include="node_modules\ng2-pdf-viewer\README.md" />
+    <Content Include="node_modules\node_modules.zip" />
+    <Content Include="node_modules\pdfjs-dist\bower.json" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\78-EUC-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\78-EUC-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\78-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\78-RKSJ-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\78-RKSJ-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\78-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\78ms-RKSJ-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\78ms-RKSJ-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\83pv-RKSJ-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\90ms-RKSJ-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\90ms-RKSJ-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\90msp-RKSJ-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\90msp-RKSJ-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\90pv-RKSJ-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\90pv-RKSJ-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Add-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Add-RKSJ-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Add-RKSJ-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Add-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Adobe-CNS1-0.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Adobe-CNS1-1.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Adobe-CNS1-2.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Adobe-CNS1-3.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Adobe-CNS1-4.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Adobe-CNS1-5.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Adobe-CNS1-6.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Adobe-CNS1-UCS2.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Adobe-GB1-0.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Adobe-GB1-1.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Adobe-GB1-2.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Adobe-GB1-3.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Adobe-GB1-4.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Adobe-GB1-5.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Adobe-GB1-UCS2.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Adobe-Japan1-0.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Adobe-Japan1-1.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Adobe-Japan1-2.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Adobe-Japan1-3.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Adobe-Japan1-4.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Adobe-Japan1-5.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Adobe-Japan1-6.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Adobe-Japan1-UCS2.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Adobe-Korea1-0.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Adobe-Korea1-1.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Adobe-Korea1-2.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Adobe-Korea1-UCS2.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\B5-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\B5-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\B5pc-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\B5pc-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\CNS-EUC-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\CNS-EUC-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\CNS1-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\CNS1-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\CNS2-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\CNS2-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\ETen-B5-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\ETen-B5-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\ETenms-B5-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\ETenms-B5-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\ETHK-B5-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\ETHK-B5-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\EUC-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\EUC-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Ext-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Ext-RKSJ-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Ext-RKSJ-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Ext-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\GB-EUC-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\GB-EUC-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\GB-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\GB-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\GBK-EUC-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\GBK-EUC-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\GBK2K-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\GBK2K-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\GBKp-EUC-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\GBKp-EUC-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\GBpc-EUC-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\GBpc-EUC-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\GBT-EUC-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\GBT-EUC-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\GBT-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\GBT-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\GBTpc-EUC-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\GBTpc-EUC-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Hankaku.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Hiragana.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\HKdla-B5-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\HKdla-B5-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\HKdlb-B5-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\HKdlb-B5-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\HKgccs-B5-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\HKgccs-B5-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\HKm314-B5-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\HKm314-B5-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\HKm471-B5-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\HKm471-B5-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\HKscs-B5-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\HKscs-B5-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Katakana.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\KSC-EUC-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\KSC-EUC-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\KSC-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\KSC-Johab-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\KSC-Johab-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\KSC-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\KSCms-UHC-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\KSCms-UHC-HW-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\KSCms-UHC-HW-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\KSCms-UHC-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\KSCpc-EUC-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\KSCpc-EUC-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\LICENSE" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\NWP-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\NWP-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\RKSJ-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\RKSJ-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\Roman.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniCNS-UCS2-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniCNS-UCS2-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniCNS-UTF16-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniCNS-UTF16-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniCNS-UTF32-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniCNS-UTF32-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniCNS-UTF8-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniCNS-UTF8-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniGB-UCS2-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniGB-UCS2-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniGB-UTF16-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniGB-UTF16-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniGB-UTF32-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniGB-UTF32-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniGB-UTF8-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniGB-UTF8-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniJIS-UCS2-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniJIS-UCS2-HW-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniJIS-UCS2-HW-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniJIS-UCS2-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniJIS-UTF16-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniJIS-UTF16-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniJIS-UTF32-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniJIS-UTF32-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniJIS-UTF8-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniJIS-UTF8-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniJIS2004-UTF16-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniJIS2004-UTF16-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniJIS2004-UTF32-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniJIS2004-UTF32-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniJIS2004-UTF8-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniJIS2004-UTF8-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniJISPro-UCS2-HW-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniJISPro-UCS2-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniJISPro-UTF8-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniJISX0213-UTF32-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniJISX0213-UTF32-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniJISX02132004-UTF32-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniJISX02132004-UTF32-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniKS-UCS2-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniKS-UCS2-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniKS-UTF16-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniKS-UTF16-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniKS-UTF32-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniKS-UTF32-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniKS-UTF8-H.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\UniKS-UTF8-V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\V.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\cmaps\WP-Symbol.bcmap" />
+    <Content Include="node_modules\pdfjs-dist\LICENSE" />
+    <Content Include="node_modules\pdfjs-dist\package.json" />
+    <Content Include="node_modules\pdfjs-dist\README.md" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="node_modules\core-js\client\shim.min.js.map" />
+    <None Include="Properties\PublishProfiles\ProjectWorkplace.pubxml" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\bootstrap-3.3.7-dist\css\bootstrap-theme.css.map" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\bootstrap-3.3.7-dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\bootstrap-3.3.7-dist\css\bootstrap.css.map" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\bootstrap-3.3.7-dist\css\bootstrap.min.css.map" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\less\core.less" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\less\list.less" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\less\path.less" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW - Copy\Team Org\Styles\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\bootstrap-3.3.7-dist\css\bootstrap-theme.css.map" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\bootstrap-3.3.7-dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\bootstrap-3.3.7-dist\css\bootstrap.css.map" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\bootstrap-3.3.7-dist\css\bootstrap.min.css.map" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\less\core.less" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\less\list.less" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\less\path.less" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="resources\workplace\02TEAM OVERVIEW\Team Org\Styles\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="resources\workplace\04DIS TOOLS\Workday Guide.pdf" />
+    <Content Include="resources\workplace\04DIS TOOLS\Workday Guide.pptx" />
+    <Content Include="resources\workplace\05POLICIES\Information Security_Other Asia and Support.pdf" />
+    <Content Include="resources\workplace\05POLICIES\Privacy Policy_CDN, Other Asia and Support_08-2012.pdf" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55672</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:55672/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

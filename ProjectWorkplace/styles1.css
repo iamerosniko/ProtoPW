@@ -1,0 +1,162 @@
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+
+/*LA*/
+.Maincontent{
+    height: 100vh;
+}
+
+#MainHeader{
+    padding: 0px; 
+    margin: 0px; 
+    height: 7%; 
+    background: #418173; 
+    padding: 0px; 
+    margin: 0px;
+}
+
+#MainBody{
+    padding: 0px; 
+    margin: 0px;
+    height: 93%
+}
+
+#BodySideNav{
+    
+    background:#196856; 
+    margin: 0px;
+    display: block; 
+    height: 93vh; 
+    padding: 0px;
+    overflow-y: auto;
+}
+
+#BodyContent{
+    background: #f1f1f1; 
+    display: block; 
+    height: 93vh;
+    padding: 0px 15px;
+    margin: 0px;
+	
+}
+/*================================================================================*/
+/*Header CSSs*/
+#UserIcon{
+    text-decoration: none;
+    list-style-type: none; 
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    Color: #eee !important;
+    font-weight: bold;  
+    font-size: 20px;
+    padding-top: 15px; 
+}
+#UserDetails > div > a, #UserDetails{
+    /*text-decoration: none;*/
+    list-style-type: none; 
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    Color: #eee;
+    font-weight: bold;  
+    font-size: 18px;
+}
+
+#BrandLogo, #WebsiteTitle, #UserDetails{
+    padding: 0px;
+    height: 100%
+}
+ #Logo{
+     width: 240px; 
+     height: 100%; 
+     padding: 10px 0 10px 25px;
+ }
+
+ #WebsiteTitle > div{
+     width: 100%; 
+     height: 100%; 
+     text-align: center;
+     padding-top: 17px
+ }
+ #Title{
+     font-size: 25px;
+     font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+     Color: #eee;
+ }
+
+ #UserDetails > div{
+     width: 100%; 
+     height: 100%; 
+     text-align: right;
+     padding-right: 15px; 
+     padding-top: 23px;
+ }
+
+
+/*================================================================================*/
+
+/*Sidenav CSSs*/
+
+.list-group > .list-group-item {
+    text-decoration: none;
+    list-style-type: none; 
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    Color: #eee;
+    font-weight: bold;  
+    font-size: 18px;
+    background-color: #196856;
+    padding: 25px 0px 25px 25px;
+}
+
+.list-group-item{
+    border: 0 none !important;
+}
+
+.list-group-item:focus,
+.list-group-item:hover{
+    background: #00281F !important;
+    Color: #eee !important;
+}
+
+.list-group-item.subitem:focus,
+.list-group-item.subitem:hover{
+    background: #529082 !important;
+    Color: #eee !important;
+}
+
+.list-group-item.subsubItem:focus,
+.list-group-item.subsubItem:hover{
+    background: #2E7364 !important;
+    Color: #eee !important;
+}
+
+.list-group-item.subitem{
+    padding-left: 35px;  
+    font-size: 13px;
+    background: #185c4c;
+    color: #eee;
+    font-weight: bold;  
+}
+
+.list-group-item.subsubItem{
+    padding-left: 55px;
+    background: #185c4c;
+    font-size: 12px;
+    color: #eee;
+}
+
+#TriBtn1, #TriBtn2, #TriBtn3, #TriBtn4{
+    color: #fff; 
+    font-size: 20px; 
+    float: right;
+    padding-right: 15px; 
+}
+
+#TriBtn11, #TriBtn22, #TriBtn33, #TriBtn44{
+    color: #fff; 
+    text-align: center; 
+    float: right;
+    padding-right: 15px;
+}
+
+

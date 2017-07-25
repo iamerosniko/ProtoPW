@@ -1,0 +1,314 @@
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+
+/*LA*/
+.Maincontent{
+    height: 100vh;
+}
+
+#MainHeader{
+    padding: 0px; 
+    margin: 0px; 
+    height: 7%; 
+    background: #418173; 
+    padding: 0px; 
+    margin: 0px;
+}
+
+#MainBody{
+    padding: 0px; 
+    margin: 0px;
+    height: 93%
+}
+
+#BodySideNav{
+    
+    background:#196856; 
+    margin: 0px;
+    display: block; 
+    height: 93vh; 
+    padding: 0px;
+    overflow-y: auto;
+}
+
+#BodyContent{
+    
+    background: #f1f1f1;
+     margin: 0px; 
+     display: block; 
+     height: 93vh;
+     padding: 0px;
+}
+/*================================================================================*/
+/*Header CSSs*/
+#UserIcon{
+    text-decoration: none;
+    list-style-type: none; 
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    Color: #eee !important;
+    font-weight: bold;  
+    font-size: 20px;
+    padding-top: 15px; 
+}
+#UserDetails > div > a, #UserDetails{
+    /*text-decoration: none;*/
+    list-style-type: none; 
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    Color: #eee;
+    font-weight: bold;  
+    font-size: 18px;
+}
+
+#BrandLogo, #WebsiteTitle, #UserDetails{
+    padding: 0px;
+    height: 100%
+}
+ #Logo{
+     width: 240px; 
+     height: 100%; 
+     padding: 10px 0 10px 25px;
+ }
+
+ #WebsiteTitle > div{
+     width: 100%; 
+     height: 100%; 
+     text-align: center;
+     padding-top: 17px
+ }
+ #Title{
+     font-size: 25px;
+     font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+     Color: #eee;
+ }
+
+ #UserDetails > div{
+     width: 100%; 
+     height: 100%; 
+     text-align: right;
+     padding-right: 15px; 
+     padding-top: 23px;
+ }
+
+
+/*================================================================================*/
+
+/*Sidenav CSSs*/
+
+.list-group > .list-group-item {
+    text-decoration: none;
+    list-style-type: none; 
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    Color: #eee;
+    font-weight: bold;  
+    font-size: 18px;
+    background-color: #196856;
+    padding: 25px 0px 25px 25px;
+}
+
+.list-group-item{
+    border: 0 none !important;
+}
+
+.list-group-item:focus,
+.list-group-item:hover{
+    background: #00281F !important;
+    Color: #eee !important;
+}
+
+.list-group-item.subitem:focus,
+.list-group-item.subitem:hover{
+    background: #529082 !important;
+    Color: #eee !important;
+}
+
+.list-group-item.subsubItem:focus,
+.list-group-item.subsubItem:hover{
+    background: #2E7364 !important;
+    Color: #eee !important;
+}
+
+.list-group-item.subitem{
+    padding-left: 35px;  
+    font-size: 13px;
+    background: #185c4c;
+    color: #eee;
+    font-weight: bold;  
+}
+
+.list-group-item.subsubItem{
+    padding-left: 55px;
+    background: #185c4c;
+    font-size: 12px;
+    color: #eee;
+}
+
+#TriBtn1, #TriBtn2, #TriBtn3, #TriBtn4{
+    color: #fff; 
+    font-size: 20px; 
+    float: right;
+    padding-right: 15px; 
+}
+
+#TriBtn11, #TriBtn22, #TriBtn33, #TriBtn44{
+    color: #fff; 
+    text-align: center; 
+    float: right;
+    padding-right: 15px;
+}
+
+
+
+
+/*splash*/
+.fullSplash {
+    background:url("Resources/Images/background.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    text-align: center;
+}
+
+body{
+    background-color: transparent;
+    text-align: center;
+}
+
+.SplashTheme{
+    font-family: 'Lato', sans-serif;
+    color: #FFFFFF;
+}
+
+.User{
+    font-family: 'Lato', sans-serif;
+    font-size: 30px;
+    margin-top: 100px;
+    text-align: center;
+    position: relative;
+}
+
+.brandLogo{
+    margin: 0 auto;
+    width: 650px;
+    min-width: 150px;
+    margin-top: 150px;
+    text-align: -webkit-center;
+    text-align: center;
+    position: relative;
+}
+
+.divider{
+        width: 1px; 
+        height: 110px; 
+        background-color: white; 
+        display: block; 
+        margin: 0 10px; 
+        padding: 0.1%; 
+    }
+
+@media (max-width: 1050px) {
+    .brandLogo {
+        margin: 0 auto;
+        width: 250px;
+        margin-top: 150px;
+        text-align: -webkit-center;
+        text-align: center;
+        position: relative;
+    }
+    .divider{
+        width: 300px; 
+        height: 1px; 
+        background-color: white; 
+        display: block; 
+        margin: 20px 0px;
+    }
+}
+
+
+
+.Workplace{
+    font-family: 'Lato', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    position: relative;
+}
+
+.authorized{
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    margin-top: 100px;
+    display: block;
+    text-align: center;
+    width: auto;
+}
+
+.buttondiv{
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    margin-top: 100px;
+    display: block;
+    text-align: center;
+    width: auto;
+}
+
+.Button{ 
+    display: block;
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+    border: 2px dotted #ffffff;  
+    text-align: -webkit-center;
+    margin: 0 auto;
+}
+
+.ButtonDesign{
+    color: #ffffff;
+    font-size: 12px;
+    font-family: 'Lato', sans-serif;
+    margin: 8%;
+    border: 1px solid #FFFFFF;
+    border-radius: 100%;
+    width: 85%;
+    height: 85%;
+    text-anchor: middle;
+    padding-top: 25%;
+}
+
+.Button:hover{
+    display: block;
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+    border: 2px solid #ffffff;  
+    text-align: -webkit-center;
+    margin: 0 auto;
+}
+
+.ButtonDesign:hover {
+    color: #00aeef;
+    font-size: 12px;
+    background-color: #ffffff;
+    font-family: 'Lato', sans-serif;
+    margin: 8%;
+    border: 1px solid #FFFFFF;
+    border-radius: 100%;
+    width: 85%;
+    height: 85%;
+    text-anchor: middle;
+    padding-top: 25%;
+}
+
+.manulifelogo{
+    width: 100%; margin-top: 5%
+}
+
+.johnhancocklogo{
+    width: 100%; margin-top: 2%
+}
+
+.logo{
+    margin: 0; padding: 0
+}
