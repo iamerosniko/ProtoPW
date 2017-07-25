@@ -14,17 +14,17 @@ using System.Web;
 
 namespace ProjectWorkplace.Controllers
 {
-    public class resourcesController : ApiController
+    public class ResourcesController : ApiController
     {
         private ProjectWorkplaceContext db = new ProjectWorkplaceContext();
 
-        // GET: api/resources
-        public IQueryable<PW_resources> GetPW_resources()
+        // GET: api/Resources
+        public IQueryable<PW_Resources> GetPW_Resources()
         {
-            return db.PW_resources;
+            return db.PW_Resources;
         }
 
-        [Route("api/resources/GetResourcePath")]
+        [Route("api/Resources/GetResourcePath")]
         public PW_GetResourcePath_Result GetResourcePath(string resourceCategory)
         {
             string currentDomainUser = HttpContext.Current.User.Identity.Name.ToString();
@@ -41,14 +41,14 @@ namespace ProjectWorkplace.Controllers
 
         }
 
-        [Route("api/resources/GetResourcePath2")]
-        public PW_GetResourcePath2_Result GetResourcePath2(string resourceCategory)
+        [Route("api/Resources/GetResourcePath2")]
+        public PW_GetResourcePath2_Result GetResourcePath2(string resourceCategory,string currentUsername)
         {
-            string currentDomainUser = HttpContext.Current.User.Identity.Name.ToString();
+            //getting domain user -- 
+            //string currentDomainUser = HttpContext.Current.User.Identity.Name.ToString();
             //username only
-            string currentUsername = currentDomainUser.Remove(0, currentDomainUser.IndexOf('\\') + 1);
+            //string currentUsername = currentDomainUser.Remove(0, currentDomainUser.IndexOf('\\') + 1);
 
-            //this comming code is the temporary solution of registration side PW_TEMPORARY USERS
             var a = db.PW_GetResourcePath2(currentUsername, resourceCategory).ToList();
 
 
@@ -56,12 +56,12 @@ namespace ProjectWorkplace.Controllers
                 new PW_GetResourcePath2_Result();
 
         }
-        [Route("api/resources/GetVideo")]
-        public PW_GetVideo_Result GetVideo(bool isLeader)
+        [Route("api/Resources/GetVideo")]
+        public PW_GetVideo_Result GetVideo(bool isLeader, string currentUsername)
         {
-            string currentDomainUser = HttpContext.Current.User.Identity.Name.ToString();
+            //string currentDomainUser = HttpContext.Current.User.Identity.Name.ToString();
             //username only
-            string currentUsername = currentDomainUser.Remove(0, currentDomainUser.IndexOf('\\') + 1);
+            //string currentUsername = currentDomainUser.Remove(0, currentDomainUser.IndexOf('\\') + 1);
 
             //this comming code is the temporary solution of registration side PW_TEMPORARY USERS
             var a = db.PW_GetVideo(currentUsername, isLeader).ToList();
@@ -72,7 +72,7 @@ namespace ProjectWorkplace.Controllers
 
         }
 
-        [Route("api/resources/GetCurrentUser")]
+        [Route("ProjectWorkplace/api/Resources/GetCurrentUser")]
         public PW_GetCurrentUser_Result GetCurrentUser()
         {
             string currentDomainUser = HttpContext.Current.User.Identity.Name.ToString();
@@ -88,34 +88,34 @@ namespace ProjectWorkplace.Controllers
 
         }
         
-        // GET: api/resources/5
-        [ResponseType(typeof(PW_resources))]
-        public async Task<IHttpActionResult> GetPW_resources(Guid id)
+        // GET: api/Resources/5
+        [ResponseType(typeof(PW_Resources))]
+        public async Task<IHttpActionResult> GetPW_Resources(Guid id)
         {
-            PW_resources pW_resources = await db.PW_resources.FindAsync(id);
-            if (pW_resources == null)
+            PW_Resources pW_Resources = await db.PW_Resources.FindAsync(id);
+            if (pW_Resources == null)
             {
                 return NotFound();
             }
 
-            return Ok(pW_resources);
+            return Ok(pW_Resources);
         }
         
-        // PUT: api/resources/5
+        // PUT: api/Resources/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutPW_resources(Guid id, PW_resources pW_resources)
+        public async Task<IHttpActionResult> PutPW_Resources(Guid id, PW_Resources pW_Resources)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != pW_resources.ResourceID)
+            if (id != pW_Resources.ResourceID)
             {
                 return BadRequest();
             }
 
-            db.Entry(pW_resources).State = EntityState.Modified;
+            db.Entry(pW_Resources).State = EntityState.Modified;
 
             try
             {
@@ -123,7 +123,7 @@ namespace ProjectWorkplace.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!PW_resourcesExists(id))
+                if (!PW_ResourcesExists(id))
                 {
                     return NotFound();
                 }
@@ -136,16 +136,16 @@ namespace ProjectWorkplace.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/resources
-        [ResponseType(typeof(PW_resources))]
-        public async Task<IHttpActionResult> PostPW_resources(PW_resources pW_resources)
+        // POST: api/Resources
+        [ResponseType(typeof(PW_Resources))]
+        public async Task<IHttpActionResult> PostPW_Resources(PW_Resources pW_Resources)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.PW_resources.Add(pW_resources);
+            db.PW_Resources.Add(pW_Resources);
 
             try
             {
@@ -153,7 +153,7 @@ namespace ProjectWorkplace.Controllers
             }
             catch (DbUpdateException)
             {
-                if (PW_resourcesExists(pW_resources.ResourceID))
+                if (PW_ResourcesExists(pW_Resources.ResourceID))
                 {
                     return Conflict();
                 }
@@ -163,23 +163,23 @@ namespace ProjectWorkplace.Controllers
                 }
             }
 
-            return CreatedAtRoute("DefaultApi", new { id = pW_resources.ResourceID }, pW_resources);
+            return CreatedAtRoute("DefaultApi", new { id = pW_Resources.ResourceID }, pW_Resources);
         }
 
-        // DELETE: api/resources/5
-        [ResponseType(typeof(PW_resources))]
-        public async Task<IHttpActionResult> DeletePW_resources(Guid id)
+        // DELETE: api/Resources/5
+        [ResponseType(typeof(PW_Resources))]
+        public async Task<IHttpActionResult> DeletePW_Resources(Guid id)
         {
-            PW_resources pW_resources = await db.PW_resources.FindAsync(id);
-            if (pW_resources == null)
+            PW_Resources pW_Resources = await db.PW_Resources.FindAsync(id);
+            if (pW_Resources == null)
             {
                 return NotFound();
             }
 
-            db.PW_resources.Remove(pW_resources);
+            db.PW_Resources.Remove(pW_Resources);
             await db.SaveChangesAsync();
 
-            return Ok(pW_resources);
+            return Ok(pW_Resources);
         }
 
         protected override void Dispose(bool disposing)
@@ -191,9 +191,9 @@ namespace ProjectWorkplace.Controllers
             base.Dispose(disposing);
         }
 
-        private bool PW_resourcesExists(Guid id)
+        private bool PW_ResourcesExists(Guid id)
         {
-            return db.PW_resources.Count(e => e.ResourceID == id) > 0;
+            return db.PW_Resources.Count(e => e.ResourceID == id) > 0;
         }
     }
 }

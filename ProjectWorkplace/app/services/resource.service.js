@@ -15,7 +15,7 @@ var ResourceService = (function () {
     function ResourceService(http) {
         this.http = http;
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
-        this.apiUrl = 'ProjectWorkplace/api/Resources';
+        this.apiUrl = 'api/Resources';
     }
     //pass the question id
     ResourceService.prototype.getResourcePath = function (resourceCategory) {
@@ -26,9 +26,9 @@ var ResourceService = (function () {
             .then(function (response) { return response.json(); })
             .catch(this.handleError);
     };
-    //this get values related to PW_TEMPORARYUSERS (NOT YET DONE)
+    //this get values related to PW_TEMPORARYUSERS 
     ResourceService.prototype.getResourcePath2 = function (resourceCategory) {
-        var url = this.apiUrl + "/GetResourcePath2/?resourceCategory=" + resourceCategory;
+        var url = this.apiUrl + "/GetResourcePath2/?resourceCategory=" + resourceCategory + "&currentUsername=" + this.getCookie();
         return this.http
             .get(url)
             .toPromise()
@@ -36,7 +36,7 @@ var ResourceService = (function () {
             .catch(this.handleError);
     };
     ResourceService.prototype.getVideo = function (isLeader) {
-        var url = this.apiUrl + "/GetVideo/?isLeader=" + isLeader;
+        var url = this.apiUrl + "/GetVideo/?isLeader=" + isLeader + "&currentUsername=" + this.getCookie();
         return this.http
             .get(url)
             .toPromise()
@@ -54,6 +54,10 @@ var ResourceService = (function () {
     ResourceService.prototype.handleError = function (error) {
         console.error('An error occurred', error); // for demo purposes only
         return Promise.reject(error.message || error);
+    };
+    ResourceService.prototype.getCookie = function () {
+        var decodedCookie = decodeURIComponent(document.cookie);
+        return decodedCookie.toString();
     };
     return ResourceService;
 }());

@@ -26,6 +26,10 @@ var AuthUserComponent = (function () {
     AuthUserComponent.prototype.routeWithID = function (path, id) {
         this.router.navigate(['/' + path, id]);
     };
+    AuthUserComponent.prototype.getCookie = function () {
+        var decodedCookie = decodeURIComponent(document.cookie);
+        return decodedCookie.toString();
+    };
     return AuthUserComponent;
 }());
 __decorate([

@@ -19,7 +19,7 @@ namespace ProjectWorkplace.Controllers
         // GET api/TemporaryUsers
         public IQueryable<PW_TemporaryUsers> GetPW_TemporaryUsers()
         {
-            return db.PW_TemporaryUsers;
+            return db.PW_TemporaryUsers.OrderByDescending(x=>x.ID);
         }
 
         // GET api/TemporaryUsers/5
