@@ -12,13 +12,13 @@ namespace ProjectWorkplace.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class PW_Teamresources
+    public partial class PW_TeamResources
     {
         public int TeamResourceID { get; set; }
         public System.Guid TeamID { get; set; }
         public System.Guid ResourceID { get; set; }
     
-        public virtual PW_resources PW_resources { get; set; }
+        public virtual PW_Resources PW_Resources { get; set; }
         public virtual PW_Teams PW_Teams { get; set; }
     }
 }

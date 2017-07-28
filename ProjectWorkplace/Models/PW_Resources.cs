@@ -12,12 +12,12 @@ namespace ProjectWorkplace.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class PW_resources
+    public partial class PW_Resources
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PW_resources()
+        public PW_Resources()
         {
-            this.PW_Teamresources = new HashSet<PW_Teamresources>();
+            this.PW_TeamResources = new HashSet<PW_TeamResources>();
         }
     
         public System.Guid ResourceID { get; set; }
@@ -27,6 +27,6 @@ namespace ProjectWorkplace.Models
         public bool IsUrl { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PW_Teamresources> PW_Teamresources { get; set; }
+        public virtual ICollection<PW_TeamResources> PW_TeamResources { get; set; }
     }
 }
