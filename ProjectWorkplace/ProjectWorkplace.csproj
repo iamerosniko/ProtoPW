@@ -171,6 +171,7 @@
     <Compile Include="Controllers\TeamsController.cs" />
     <Compile Include="Controllers\TemporaryUsersController.cs" />
     <Compile Include="Controllers\UserAuthController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\ViewScoreController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

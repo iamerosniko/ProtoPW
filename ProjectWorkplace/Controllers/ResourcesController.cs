@@ -19,9 +19,9 @@ namespace ProjectWorkplace.Controllers
         private ProjectWorkplaceContext db = new ProjectWorkplaceContext();
 
         // GET: api/Resources
-        public IQueryable<PW_Resources> GetPW_Resources()
+        public IQueryable<PW_resources> GetPW_Resources()
         {
-            return db.PW_Resources;
+            return db.PW_resources;
         }
 
         [Route("api/Resources/GetResourcePath")]
@@ -89,10 +89,10 @@ namespace ProjectWorkplace.Controllers
         }
         
         // GET: api/Resources/5
-        [ResponseType(typeof(PW_Resources))]
+        [ResponseType(typeof(PW_resources))]
         public async Task<IHttpActionResult> GetPW_Resources(Guid id)
         {
-            PW_Resources pW_Resources = await db.PW_Resources.FindAsync(id);
+            PW_resources pW_Resources = await db.PW_resources.FindAsync(id);
             if (pW_Resources == null)
             {
                 return NotFound();
@@ -103,7 +103,7 @@ namespace ProjectWorkplace.Controllers
         
         // PUT: api/Resources/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutPW_Resources(Guid id, PW_Resources pW_Resources)
+        public async Task<IHttpActionResult> PutPW_Resources(Guid id, PW_resources pW_Resources)
         {
             if (!ModelState.IsValid)
             {
@@ -137,15 +137,15 @@ namespace ProjectWorkplace.Controllers
         }
 
         // POST: api/Resources
-        [ResponseType(typeof(PW_Resources))]
-        public async Task<IHttpActionResult> PostPW_Resources(PW_Resources pW_Resources)
+        [ResponseType(typeof(PW_resources))]
+        public async Task<IHttpActionResult> PostPW_Resources(PW_resources pW_Resources)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.PW_Resources.Add(pW_Resources);
+            db.PW_resources.Add(pW_Resources);
 
             try
             {
@@ -167,16 +167,16 @@ namespace ProjectWorkplace.Controllers
         }
 
         // DELETE: api/Resources/5
-        [ResponseType(typeof(PW_Resources))]
+        [ResponseType(typeof(PW_resources))]
         public async Task<IHttpActionResult> DeletePW_Resources(Guid id)
         {
-            PW_Resources pW_Resources = await db.PW_Resources.FindAsync(id);
+            PW_resources pW_Resources = await db.PW_resources.FindAsync(id);
             if (pW_Resources == null)
             {
                 return NotFound();
             }
 
-            db.PW_Resources.Remove(pW_Resources);
+            db.PW_resources.Remove(pW_Resources);
             await db.SaveChangesAsync();
 
             return Ok(pW_Resources);
@@ -193,7 +193,7 @@ namespace ProjectWorkplace.Controllers
 
         private bool PW_ResourcesExists(Guid id)
         {
-            return db.PW_Resources.Count(e => e.ResourceID == id) > 0;
+            return db.PW_resources.Count(e => e.ResourceID == id) > 0;
         }
     }
 }
